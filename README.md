@@ -4,7 +4,7 @@ This is my personal portfolio website showcasing my work as an **AI & Machine Le
 I specialize in building intelligent systems using **Computer Vision, NLP, and Deep Learning** to solve real-world problems.
 
 ## 🚀 Live Website
-👉 [Visit Portfolio](huzaifa-ai.vercel.app)
+👉 [Visit Portfolio](https://huzaifa-ai.vercel.app/)
 
 ## 🧠 About Me
 I am an AI & ML Engineer passionate about transforming complex data into intelligent, production-ready systems. My focus is on creating scalable solutions that deliver measurable business impact.
