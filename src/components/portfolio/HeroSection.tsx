@@ -23,20 +23,27 @@ const HeroSection = () => {
         />
       </div>
 
-      {/* Grid pattern overlay */}
+      {/* Grid overlay */}
       <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:100px_100px]" />
 
       <div className="container relative z-10 px-6 py-20">
         <div className="max-w-4xl mx-auto text-center">
           {/* Status badge */}
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-8 animate-fade-in">
+          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-primary/30 bg-primary/5 mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             <span className="text-sm text-muted-foreground">
               Available for opportunities
             </span>
           </div>
 
-          {/* Main headline */}
+          {/* Profile Image */}
+          <img
+            src="/profile.jpg"
+            alt="Muhammad Huzaifa Zeb"
+            className="w-36 h-36 mx-auto rounded-full border-4 border-primary/40 shadow-xl mb-6 object-cover"
+          />
+
+          {/* Headline */}
           <h1
             className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in"
             style={{ animationDelay: "0.1s" }}
@@ -60,7 +67,7 @@ const HeroSection = () => {
 
           {/* Subheadline */}
           <p
-            className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto animate-fade-in"
+            className="text-xl md:text-2xl text-muted-foreground mb-10 max-w-2xl mx-auto animate-fade-in"
             style={{ animationDelay: "0.2s" }}
           >
             AI & Machine Learning Engineer specializing in Computer Vision, NLP,
@@ -79,7 +86,7 @@ const HeroSection = () => {
               onClick={scrollToContact}
             >
               <Mail className="mr-2 h-5 w-5" />
-              Let's Talk
+              Let’s Talk
             </Button>
 
             <Button
@@ -136,7 +143,7 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Scroll indicator */}
+        {/* Scroll Indicator */}
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 animate-bounce">
           <a
             href="#about"

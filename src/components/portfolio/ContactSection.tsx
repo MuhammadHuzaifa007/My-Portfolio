@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
@@ -26,6 +27,26 @@ const contactInfo = [
 ];
 
 const ContactSection = () => {
+  const [loading, setLoading] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    await fetch("https://formsubmit.co/huzaifazaib69@gmail.com", {
+      method: "POST",
+      body: data,
+    });
+
+    setLoading(false);
+    setSubmitted(true);
+    form.reset();
+  };
+
   return (
     <section id="contact" className="py-24 relative">
       <div className="container relative z-10 px-6">
@@ -110,53 +131,70 @@ const ContactSection = () => {
                     Send a Message
                   </h3>
 
-                  <form
-                    action="https://formsubmit.co/huzaifazaib69@gmail.com"
-                    method="POST"
-                    className="space-y-4"
-                  >
-                    {/* Hidden Config */}
-                    <input
-                      type="hidden"
-                      name="_subject"
-                      value="New Portfolio Message"
-                    />
-                    <input type="hidden" name="_captcha" value="false" />
-                    <input type="hidden" name="_template" value="table" />
-
-                    <div>
-                      <label className="text-sm font-medium">Name</label>
-                      <Input name="name" placeholder="Your name" required />
+                  {submitted ? (
+                    <div className="text-center py-12">
+                      <h4 className="text-2xl font-bold text-primary mb-2">
+                        Thanks! 🎉
+                      </h4>
+                      <p className="text-muted-foreground">
+                        I’ll get back to you within 24 hours.
+                      </p>
                     </div>
-
-                    <div>
-                      <label className="text-sm font-medium">Email</label>
-                      <Input
-                        name="email"
-                        type="email"
-                        placeholder="Enter your email"
-                        required
+                  ) : (
+                    <form className="space-y-4" onSubmit={handleSubmit}>
+                      {/* Hidden Config */}
+                      <input
+                        type="hidden"
+                        name="_subject"
+                        value="New Portfolio Message"
                       />
-                    </div>
-
-                    <div>
-                      <label className="text-sm font-medium">Message</label>
-                      <Textarea
-                        name="message"
-                        placeholder="Tell me about your project or just say hello..."
-                        rows={4}
-                        required
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_template" value="table" />
+                      <input
+                        type="text"
+                        name="_honey"
+                        style={{ display: "none" }}
                       />
-                    </div>
 
-                    <Button
-                      type="submit"
-                      className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary"
-                    >
-                      <Send className="mr-2 h-4 w-4" />
-                      Send Message
-                    </Button>
-                  </form>
+                      <div>
+                        <label className="text-sm font-medium">Name</label>
+                        <Input name="name" placeholder="Your name" required />
+                      </div>
+
+                      <div>
+                        <label className="text-sm font-medium">Email</label>
+                        <Input
+                          name="email"
+                          type="email"
+                          placeholder="Enter your email"
+                          required
+                        />
+                      </div>
+
+                      <div>
+                        <label className="text-sm font-medium">Message</label>
+                        <Textarea
+                          name="message"
+                          placeholder="Tell me about your project or just say hello..."
+                          rows={4}
+                          required
+                        />
+                      </div>
+
+                      <Button
+                        type="submit"
+                        disabled={loading}
+                        className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary"
+                      >
+                        {loading ? "Sending..." : (
+                          <>
+                            <Send className="mr-2 h-4 w-4" />
+                            Send Message
+                          </>
+                        )}
+                      </Button>
+                    </form>
+                  )}
                 </CardContent>
               </Card>
             </div>
