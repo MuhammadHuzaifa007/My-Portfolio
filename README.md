@@ -7,8 +7,7 @@ The portfolio is built with a strong focus on **clean architecture, modern UI/UX
 ---
 
 ## 🌐 Live Website
-🔗 https://your-vercel-project.vercel.app  
-_(Replace with your deployed Vercel URL)_
+🔗 https://muhammadhuzaifazebportfolio.vercel.app/
 
 ---
 
