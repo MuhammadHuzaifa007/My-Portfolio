@@ -5,8 +5,8 @@ import { GraduationCap, Award, Calendar, ExternalLink } from "lucide-react";
 const education = {
   degree: "BS Artificial Intelligence",
   institution: "Bahria University, Islamabad",
-  period: "Expected Graduation: January 2026",
-  focus: ["Deep Learning", "Computer Vision", "Natural Language Processing", "Machine Learning"]
+  period: "Graduated: January 2026",
+  focus: ["Machine Learning", "Deep Learning", "Computer Vision", "Natural Language Processing"]
 };
 
 const certifications = [

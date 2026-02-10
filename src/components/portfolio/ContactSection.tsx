@@ -1,41 +1,28 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Mail, MapPin, Phone, Github, Linkedin, Send } from "lucide-react";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Mail, MapPin, Phone, Send } from "lucide-react";
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
     value: "huzaifazaib69@gmail.com",
-    href: "mailto:huzaifazaib69@gmail.com"
+    href: "mailto:huzaifazaib69@gmail.com",
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+92-331-3081659",
-    href: "tel:+923313081659"
+    href: "tel:+923313081659",
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Pakistan",
-    href: null
-  }
-];
-
-const socialLinks = [
-  {
-    icon: Github,
-    label: "GitHub",
-    href: "https://github.com/MuhammadHuzaifa007",
-    username: "@MuhammadHuzaifa007"
+    href: null,
   },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    href: "https://linkedin.com/in/muhammad-huzaifa-zeb",
-    username: "muhammad-huzaifa-zeb"
-  }
 ];
 
 const ContactSection = () => {
@@ -43,27 +30,33 @@ const ContactSection = () => {
     <section id="contact" className="py-24 relative">
       <div className="container relative z-10 px-6">
         <div className="max-w-4xl mx-auto">
-          {/* Section header */}
+          {/* Section Header */}
           <div className="text-center mb-16">
             <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
-              Let's <span className="text-gradient">Connect</span>
+              Get In <span className="text-gradient">Touch</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
-              I'm always excited to discuss AI/ML projects, collaboration opportunities, or just chat about the latest in machine learning. Let's build something intelligent together.
+              I'm always excited to discuss AI/ML projects, collaboration
+              opportunities, or just chat about the latest in machine learning.
             </p>
             <div className="w-20 h-1 bg-gradient-primary mx-auto rounded-full mt-4" />
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Contact info */}
+            {/* Left: Contact Info */}
             <div className="space-y-4">
-              <h3 className="font-display text-xl font-bold mb-6">Get in Touch</h3>
-              
+              <h3 className="font-display text-xl font-bold mb-6">
+                Get in Touch
+              </h3>
+
               {contactInfo.map((item) => (
-                <Card key={item.label} className="bg-card/50 border-border/50 hover:border-primary/30 transition-all">
+                <Card
+                  key={item.label}
+                  className="bg-card/50 border-border/50 hover:border-primary/30 transition-all"
+                >
                   <CardContent className="p-4">
                     {item.href ? (
-                      <a 
+                      <a
                         href={item.href}
                         className="flex items-center gap-4 group"
                       >
@@ -71,8 +64,12 @@ const ContactSection = () => {
                           <item.icon className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="text-sm text-muted-foreground">{item.label}</p>
-                          <p className="font-medium group-hover:text-primary transition-colors">{item.value}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {item.label}
+                          </p>
+                          <p className="font-medium group-hover:text-primary transition-colors">
+                            {item.value}
+                          </p>
                         </div>
                       </a>
                     ) : (
@@ -81,7 +78,9 @@ const ContactSection = () => {
                           <item.icon className="h-5 w-5 text-primary" />
                         </div>
                         <div>
-                          <p className="text-sm text-muted-foreground">{item.label}</p>
+                          <p className="text-sm text-muted-foreground">
+                            {item.label}
+                          </p>
                           <p className="font-medium">{item.value}</p>
                         </div>
                       </div>
@@ -89,46 +88,75 @@ const ContactSection = () => {
                   </CardContent>
                 </Card>
               ))}
+
+              {/* Response Time */}
+              <Card className="bg-gradient-to-br from-[#0b1220] via-[#0e1626] to-[#0b1220] border border-border/40 rounded-2xl mt-8">
+                <CardContent className="p-6">
+                  <p className="text-sm text-muted-foreground mb-2">
+                    Response Time
+                  </p>
+                  <p className="text-2xl font-semibold text-white">
+                    Usually within 24 hours
+                  </p>
+                </CardContent>
+              </Card>
             </div>
 
-            {/* Social links & CTA */}
-            <div className="space-y-6">
-              <h3 className="font-display text-xl font-bold mb-6">Follow My Work</h3>
-              
-              {socialLinks.map((social) => (
-                <Card key={social.label} className="bg-card/50 border-border/50 hover:border-primary/30 transition-all">
-                  <CardContent className="p-4">
-                    <a 
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-4 group"
-                    >
-                      <div className="w-12 h-12 rounded-lg bg-secondary/10 flex items-center justify-center group-hover:bg-secondary/20 transition-colors">
-                        <social.icon className="h-5 w-5 text-secondary" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">{social.label}</p>
-                        <p className="font-medium group-hover:text-secondary transition-colors">{social.username}</p>
-                      </div>
-                    </a>
-                  </CardContent>
-                </Card>
-              ))}
+            {/* Right: Contact Form */}
+            <div>
+              <Card className="bg-card/50 border-border/50">
+                <CardContent className="p-6">
+                  <h3 className="font-display text-xl font-bold mb-6 text-center">
+                    Send a Message
+                  </h3>
 
-              {/* CTA Card */}
-              <Card className="bg-gradient-to-br from-primary/20 to-secondary/20 border-primary/30 mt-8">
-                <CardContent className="p-6 text-center">
-                  <h4 className="font-display text-xl font-bold mb-2">Ready to Start a Project?</h4>
-                  <p className="text-muted-foreground mb-4">
-                    Let's discuss how AI can transform your business
-                  </p>
-                  <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary" asChild>
-                    <a href="mailto:huzaifazaib69@gmail.com">
+                  <form
+                    action="https://formsubmit.co/huzaifazaib69@gmail.com"
+                    method="POST"
+                    className="space-y-4"
+                  >
+                    {/* Hidden Config */}
+                    <input
+                      type="hidden"
+                      name="_subject"
+                      value="New Portfolio Message"
+                    />
+                    <input type="hidden" name="_captcha" value="false" />
+                    <input type="hidden" name="_template" value="table" />
+
+                    <div>
+                      <label className="text-sm font-medium">Name</label>
+                      <Input name="name" placeholder="Your name" required />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium">Email</label>
+                      <Input
+                        name="email"
+                        type="email"
+                        placeholder="Enter your email"
+                        required
+                      />
+                    </div>
+
+                    <div>
+                      <label className="text-sm font-medium">Message</label>
+                      <Textarea
+                        name="message"
+                        placeholder="Tell me about your project or just say hello..."
+                        rows={4}
+                        required
+                      />
+                    </div>
+
+                    <Button
+                      type="submit"
+                      className="w-full bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary"
+                    >
                       <Send className="mr-2 h-4 w-4" />
                       Send Message
-                    </a>
-                  </Button>
+                    </Button>
+                  </form>
                 </CardContent>
               </Card>
             </div>

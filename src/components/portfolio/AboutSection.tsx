@@ -19,7 +19,7 @@ const highlights = [
   },
   {
     icon: Code2,
-    title: "Full Stack ML",
+    title: "Full Stack Developer",
     description: "From data to deployment"
   }
 ];

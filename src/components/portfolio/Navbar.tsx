@@ -8,7 +8,7 @@ const navLinks = [
   { label: "Projects", href: "#projects" },
   { label: "Experience", href: "#experience" },
   { label: "Education", href: "#education" },
-  { label: "Contact", href: "#contact" }
+  { label: "Contact", href: "#contact" },
 ];
 
 const Navbar = () => {
@@ -24,18 +24,24 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-background/80 backdrop-blur-lg border-b border-border/50' : 'bg-transparent'
-    }`}>
+    <nav
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-background/80 backdrop-blur-lg border-b border-border/50"
+          : "bg-transparent"
+      }`}
+    >
       <div className="container mx-auto px-6">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="font-display text-xl font-bold">
-            <span className="text-gradient">Huzaifa</span>
-            <span className="text-muted-foreground">.ai</span>
+          <a
+            href="#"
+            className="font-display text-xl font-bold hover:opacity-90 transition-opacity"
+          >
+            <span className="text-gradient">Muhammad Huzaifa Zeb</span>
           </a>
 
-          {/* Desktop nav */}
+          {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
             {navLinks.map((link) => (
               <a
@@ -46,21 +52,32 @@ const Navbar = () => {
                 {link.label}
               </a>
             ))}
-            <Button size="sm" className="bg-gradient-primary text-primary-foreground hover:opacity-90">
-              Hire Me
+
+            {/* ✅ FIXED LET'S TALK BUTTON */}
+            <Button
+              size="sm"
+              className="bg-gradient-primary text-primary-foreground hover:opacity-90"
+              asChild
+            >
+              <a href="#contact">Let&apos;s Talk</a>
             </Button>
           </div>
 
-          {/* Mobile menu button */}
-          <button 
+          {/* Mobile Menu Button */}
+          <button
+            aria-label="Toggle menu"
             className="md:hidden p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
-            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            {isMobileMenuOpen ? (
+              <X className="h-6 w-6" />
+            ) : (
+              <Menu className="h-6 w-6" />
+            )}
           </button>
         </div>
 
-        {/* Mobile menu */}
+        {/* Mobile Menu */}
         {isMobileMenuOpen && (
           <div className="md:hidden py-4 border-t border-border/50">
             <div className="flex flex-col gap-4">
@@ -74,8 +91,18 @@ const Navbar = () => {
                   {link.label}
                 </a>
               ))}
-              <Button className="bg-gradient-primary text-primary-foreground hover:opacity-90 w-full mt-2">
-                Hire Me
+
+              {/* ✅ FIXED MOBILE LET'S TALK */}
+              <Button
+                className="bg-gradient-primary text-primary-foreground hover:opacity-90 w-full mt-2"
+                asChild
+              >
+                <a
+                  href="#contact"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Let&apos;s Talk
+                </a>
               </Button>
             </div>
           </div>

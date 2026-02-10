@@ -20,6 +20,36 @@ const projects = [
     color: "primary"
   },
   {
+  title: "TruthLens AI-Fake News Detection System",
+  icon: AlertTriangle,
+  category: "NLP + LLMs",
+  problem: "The rapid spread of misinformation online demands intelligent systems that not only classify fake news accurately but also provide explainable insights into bias, sensationalism, and logical inconsistencies.",
+  approach: "Developed a hybrid fake news detection pipeline combining a TF-IDF + Passive Aggressive Classifier for high-precision classification with Google Gemini API for advanced reasoning. Implemented live URL scraping and article parsing using BeautifulSoup and designed explainable AI outputs highlighting bias and credibility factors.",
+  tech: ["Python", "Scikit-learn", "TF-IDF", "Passive Aggressive", "Gemini API", "BeautifulSoup", "Streamlit"],
+  results: [
+    "High-precision fake vs real news classification",
+    "Explainable AI analysis covering bias, sensationalism, and fallacies",
+    "Interactive Streamlit dashboard with downloadable PDF reports"
+  ],
+  highlight: "Hybrid ML + LLM system focused on explainable and trustworthy AI",
+  color: "primary"
+},
+{
+  title: "StyleGPT Outfit Specialist",
+  icon: MessageSquare,
+  category: "LLMs + RAG",
+  problem: "Generic fashion recommendation systems fail to provide personalized, context-aware outfit suggestions tailored to individual preferences, occasions, and style trends.",
+  approach: "Built an AI-powered fashion recommendation assistant using LLaMA 3.2 3B with LangChain for retrieval-augmented generation (RAG). Created a custom apparel dataset, generated embeddings, and implemented a FAISS vector store for fast semantic similarity search. Designed prompt pipelines for personalized and context-aware recommendations.",
+  tech: ["Python", "LLaMA 3.2", "LangChain", "FAISS", "RAG", "Embeddings", "Streamlit"],
+  results: [
+    "Personalized outfit recommendations using semantic search",
+    "Low-latency retrieval with FAISS vector indexing",
+    "Interactive Streamlit app for real-time fashion advisory"
+  ],
+  highlight: "End-to-end LLM + RAG system showcasing modern AI recommendation pipelines",
+  color: "secondary"
+},
+  {
     title: "Traffic Sign Recognition System",
     icon: Camera,
     category: "Computer Vision",
@@ -48,21 +78,6 @@ const projects = [
     ],
     highlight: "Multi-modal AI combining vision and language understanding",
     color: "accent"
-  },
-  {
-    title: "Pet Classification System",
-    icon: PawPrint,
-    category: "Transfer Learning",
-    problem: "Building accurate image classifiers with limited training data—a common industry challenge requiring efficient learning strategies.",
-    approach: "Leveraged VGG16 pre-trained weights with custom classification head. Implemented progressive unfreezing and differential learning rates for optimal fine-tuning. Built dual-mode app supporting both training and inference.",
-    tech: ["TensorFlow", "Keras", "VGG16", "Streamlit", "Transfer Learning"],
-    results: [
-      "98% accuracy with only 2,000 training images",
-      "Real-time predictions via interactive web interface",
-      "Demonstrated efficiency of transfer learning approach"
-    ],
-    highlight: "Showcases practical transfer learning for data-efficient modeling",
-    color: "primary"
   },
   {
     title: "Gender Prediction from Facial Images",

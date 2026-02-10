@@ -2,6 +2,12 @@ import { Button } from "@/components/ui/button";
 import { ArrowDown, Github, Linkedin, Mail, Download } from "lucide-react";
 
 const HeroSection = () => {
+  const scrollToContact = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  };
+
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Animated background elements */}
@@ -36,23 +42,17 @@ const HeroSection = () => {
             style={{ animationDelay: "0.1s" }}
           >
             <span className="text-white">I Build </span>
-
             <span className="bg-gradient-to-r from-indigo-400 via-purple-500 to-indigo-400 bg-clip-text text-transparent">
               Intelligent
             </span>
-
             <br />
-
             <span className="bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent">
               Systems
             </span>
-
             <span className="text-white"> That </span>
-
             <span className="bg-gradient-to-r from-purple-400 to-pink-500 bg-clip-text text-transparent">
               Solve
             </span>
-
             <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               {" "}Real Problems
             </span>
@@ -76,9 +76,10 @@ const HeroSection = () => {
             <Button
               size="lg"
               className="bg-gradient-primary text-primary-foreground hover:opacity-90 glow-primary px-8"
+              onClick={scrollToContact}
             >
               <Mail className="mr-2 h-5 w-5" />
-              Hire Me
+              Let's Talk
             </Button>
 
             <Button
@@ -96,7 +97,7 @@ const HeroSection = () => {
               className="hover:bg-muted"
               asChild
             >
-              <a href="/Huzaifa_CV-2.pdf" download>
+              <a href="/Muhammad Huzaifa Zeb CV.pdf" download>
                 <Download className="mr-2 h-5 w-5" />
                 Resume
               </a>
