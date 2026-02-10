@@ -36,13 +36,6 @@ const HeroSection = () => {
             </span>
           </div>
 
-          {/* Profile Image */}
-          <img
-            src="/profile.jpg"
-            alt="Muhammad Huzaifa Zeb"
-            className="w-36 h-36 mx-auto rounded-full border-4 border-primary/40 shadow-xl mb-6 object-cover"
-          />
-
           {/* Headline */}
           <h1
             className="font-display text-5xl md:text-7xl font-bold mb-6 leading-tight animate-fade-in"
